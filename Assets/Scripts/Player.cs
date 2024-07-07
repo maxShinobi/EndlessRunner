@@ -5,18 +5,19 @@ using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
-    public float playerSpeed = 5f;
-    public float horizontalMultiplier = 2f;
-    public float playerHealth = 10f;
+    public float playerSpeed;
+    public float horizontalMultiplier;
+    public float playerHealth;
     public Rigidbody rb;
 
     float horizontalInput;
 
-    bool alive = true;
+    bool alive;
 
     private void Start()
     {
         playerHealth = 10f;
+        alive = true;
     }
 
     private void FixedUpdate()
@@ -38,7 +39,7 @@ public class Player : MonoBehaviour
 
     public void Die()
     {
-        if (playerHealth <= 0)
+        if (playerHealth == 0)
         {
             Debug.Log("Player died");
             alive = false;

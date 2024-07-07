@@ -13,10 +13,11 @@ public class Enemy : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.name == "Player")
+        if (collision.gameObject.tag == "Player")
         {
             Debug.Log("Hit");
             player.playerHealth = 0;
+            player.Die();
         }
     }
 }
